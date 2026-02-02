@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { ReviewIssue } from "@/lib/types";
 import {
   Accordion,
@@ -76,7 +76,7 @@ export function ReviewPanel({
 
   return (
     <div className="h-full flex flex-col">
-      {/* Header with Quality Score */}
+
       <div className="shrink-0 mb-4">
         <div className="flex items-center justify-between mb-4 pb-4 border-b">
           <div className="flex items-center gap-3">
@@ -110,27 +110,25 @@ export function ReviewPanel({
           </div>
         </div>
 
-        {/* Summary */}
         <div className="bg-linear-to-br from-muted/50 to-muted/30 border rounded-xl p-4 text-sm leading-relaxed shadow-sm mb-4">
           <p className="text-foreground/90">{summary}</p>
         </div>
 
-        {/* Enhanced Key Improvements Section */}
         {refactoredCode && refactoredCode.trim() && (
           <div className="relative group border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
             {/* Glow effect */}
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 opacity-20 group-hover:opacity-30 blur-sm transition-opacity duration-300" />
+            <div className="absolute -inset-0.5 bg-linear-to-r from-emerald-500 via-teal-500 to-cyan-500 opacity-20 group-hover:opacity-30 blur-sm transition-opacity duration-300" />
 
             {/* Header */}
-            <div className="relative bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-cyan-500/10 backdrop-blur-sm px-4 py-3 border-b border-emerald-500/20">
+            <div className="relative bg-linear-to-r from-emerald-500/10 via-teal-500/10 to-cyan-500/10 backdrop-blur-sm px-4 py-3 border-b border-emerald-500/20">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <div className="p-1.5 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-lg ring-1 ring-emerald-500/30">
+                  <div className="p-1.5 bg-linear-to-br from-emerald-500/20 to-teal-500/20 rounded-lg ring-1 ring-emerald-500/30">
                     <Sparkles className="w-4 h-4 text-emerald-500" />
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-foreground flex items-center gap-2">
-                      <span className="bg-gradient-to-r from-emerald-600 to-teal-600 dark:from-emerald-400 dark:to-teal-400 bg-clip-text text-transparent">
+                      <span className="bg-linear-to-r from-emerald-600 to-teal-600 dark:from-emerald-400 dark:to-teal-400 bg-clip-text text-transparent">
                         Key Improvements
                       </span>
                     </h4>
@@ -162,10 +160,9 @@ export function ReviewPanel({
               </div>
             </div>
 
-            {/* Code Block - Light Theme with Better Wrapping */}
             <div className="relative">
-              <ScrollArea className="max-h-[400px]">
-                <div className="bg-gradient-to-br from-emerald-50/50 via-teal-50/30 to-cyan-50/20 dark:from-emerald-950/20 dark:via-teal-950/10 dark:to-cyan-950/5 p-5 border-t border-emerald-500/10">
+              <ScrollArea className="max-h-100">
+                <div className="bg-lienar-to-br from-emerald-50/50 via-teal-50/30 to-cyan-50/20 dark:from-emerald-950/20 dark:via-teal-950/10 dark:to-cyan-950/5 p-5 border-t border-emerald-500/10">
                   {/* Line numbers and code */}
                   <div className="flex gap-4">
                     {/* Line numbers */}
@@ -180,11 +177,10 @@ export function ReviewPanel({
                       ))}
                     </div>
 
-                    {/* Code - With Better Wrapping and Highlighting */}
                     <pre className="flex-1 text-xs font-mono leading-[1.7] overflow-x-auto">
-                      <code className="text-foreground/90 whitespace-pre-wrap break-words">
+                      <code className="text-foreground/90 whitespace-pre-wrap wrap-break-word">
                         {refactoredCode.split("\n").map((line, i) => {
-                          // Highlight comments
+
                           if (line.trim().startsWith("//")) {
                             return (
                               <div
@@ -195,7 +191,7 @@ export function ReviewPanel({
                               </div>
                             );
                           }
-                          // Highlight Fixed: comments
+
                           if (line.includes("// Fixed:")) {
                             return (
                               <div
@@ -206,7 +202,6 @@ export function ReviewPanel({
                               </div>
                             );
                           }
-                          // Regular code
                           return (
                             <div key={i} className="text-foreground/90">
                               {line || "\u00A0"}
@@ -217,19 +212,16 @@ export function ReviewPanel({
                     </pre>
                   </div>
 
-                  {/* Decorative gradient overlay at bottom */}
-                  <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-emerald-50/80 via-emerald-50/40 to-transparent dark:from-emerald-950/40 dark:via-emerald-950/20 pointer-events-none" />
+                  <div className="absolute bottom-0 left-0 right-0 h-12 bg-linear-to-t from-emerald-50/80 via-emerald-50/40 to-transparent dark:from-emerald-950/40 dark:via-emerald-950/20 pointer-events-none" />
                 </div>
               </ScrollArea>
 
-              {/* Premium corner accent */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-emerald-500/10 to-transparent blur-2xl pointer-events-none" />
+              <div className="absolute top-0 right-0 w-20 h-20 bg-linear-to-br from-emerald-500/10 to-transparent blur-2xl pointer-events-none" />
             </div>
           </div>
         )}
       </div>
 
-      {/* Issues List - Scrollable */}
       <div className="flex-1 min-h-0 overflow-hidden">
         <h4 className="text-sm font-bold text-foreground/80 uppercase tracking-wider mb-3 flex items-center gap-2">
           <AlertCircle className="w-4 h-4" />

@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { ArrowRight } from "lucide-react";
 
 const steps = [
@@ -40,7 +39,7 @@ export function HowItWorksSection() {
       id="how-it-works"
       className="py-32 bg-background border-t relative overflow-hidden"
     >
-      {/* Background decoration */}
+
       <div className="absolute top-0 right-0 w-125 h-125 bg-linear-to-br from-primary/5 to-transparent rounded-full blur-[100px]" />
       <div className="absolute bottom-0 left-0 w-125 h-125 bg-linear-to-tr from-indigo-500/5 to-transparent rounded-full blur-[100px]" />
 
@@ -76,13 +75,13 @@ export function HowItWorksSection() {
                 className="group relative animate-in fade-in slide-in-from-right-6 duration-1000"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                {/* Connecting line (except for last item) */}
+
                 {index < steps.length - 1 && (
                   <div className="absolute left-8 top-24 w-0.5 h-16 bg-linear-to-b from-primary/30 to-transparent" />
                 )}
 
                 <div className="flex gap-6 relative">
-                  {/* Number badge */}
+
                   <div className="relative shrink-0">
                     <div
                       className={`absolute -inset-1 bg-linear-to-br ${step.color} rounded-2xl opacity-0 group-hover:opacity-100 blur-lg transition-all duration-500`}
@@ -94,7 +93,6 @@ export function HowItWorksSection() {
                     </div>
                   </div>
 
-                  {/* Content */}
                   <div className="flex-1 pt-2">
                     <h3 className="font-bold text-2xl mb-3 tracking-tight group-hover:text-primary transition-colors duration-300">
                       {step.title}
@@ -103,7 +101,6 @@ export function HowItWorksSection() {
                       {step.description}
                     </p>
 
-                    {/* Decorative line */}
                     <div className="mt-4 h-0.5 w-0 group-hover:w-16 bg-linear-to-r from-primary to-transparent rounded-full transition-all duration-500" />
                   </div>
                 </div>

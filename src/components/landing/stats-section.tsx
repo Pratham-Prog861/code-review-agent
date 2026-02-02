@@ -35,7 +35,7 @@ export function StatsSection() {
       id="stats"
       className="py-20 relative overflow-hidden border-y bg-muted/30"
     >
-      {/* Background decoration */}
+
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]" />
 
       <div className="container mx-auto px-6 relative z-10">
@@ -46,25 +46,23 @@ export function StatsSection() {
               className="flex flex-col items-center text-center group animate-in fade-in zoom-in-95 duration-700"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              {/* Icon */}
+
               <div
-                className={`mb-4 p-4 rounded-2xl bg-gradient-to-br ${stat.color} bg-opacity-10 group-hover:scale-110 transition-transform duration-300`}
+                className={`mb-4 p-4 rounded-2xl bg-linear-to-br ${stat.color} bg-opacity-10 group-hover:scale-110 transition-transform duration-300`}
               >
                 <div
-                  className={`bg-gradient-to-br ${stat.color} bg-clip-text text-transparent`}
+                  className={`bg-linear-to-br ${stat.color} bg-clip-text text-transparent`}
                 >
                   {stat.icon}
                 </div>
               </div>
 
-              {/* Value */}
               <div
-                className={`text-4xl md:text-5xl font-bold font-playfair mb-2 bg-gradient-to-br ${stat.color} bg-clip-text text-transparent`}
+                className={`text-4xl md:text-5xl font-bold font-playfair mb-2 bg-linear-to-br ${stat.color} bg-clip-text text-transparent`}
               >
                 {stat.value}
               </div>
 
-              {/* Label */}
               <div className="text-sm md:text-base text-muted-foreground font-medium">
                 {stat.label}
               </div>

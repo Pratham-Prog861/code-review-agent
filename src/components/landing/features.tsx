@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { Zap, Shield, Sparkles, Clock } from "lucide-react";
 
 const features = [
@@ -47,7 +46,7 @@ const features = [
 export function FeaturesSection() {
   return (
     <section id="features" className="py-32 relative overflow-hidden">
-      {/* Background Elements */}
+
       <div className="absolute inset-0 bg-linear-to-b from-muted/30 via-muted/50 to-muted/30" />
       <div className="absolute inset-0 bg-noise opacity-[0.015] dark:opacity-[0.025]" />
 
@@ -75,21 +74,19 @@ export function FeaturesSection() {
               className="group relative animate-in fade-in zoom-in-95 duration-700"
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              {/* Glow effect */}
+
               <div
                 className={`absolute -inset-0.5 bg-linear-to-br ${feature.gradient} rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-all duration-500`}
               />
 
-              {/* Card */}
               <div className="relative bg-card p-8 rounded-3xl border shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full flex flex-col">
-                {/* Icon */}
+
                 <div
                   className={`mb-6 ${feature.iconBg} w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg ring-1 ring-inset ring-foreground/5 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}
                 >
                   {feature.icon}
                 </div>
 
-                {/* Content */}
                 <h3 className="font-bold text-xl mb-3 tracking-tight group-hover:text-primary transition-colors duration-300">
                   {feature.title}
                 </h3>
@@ -97,7 +94,6 @@ export function FeaturesSection() {
                   {feature.description}
                 </p>
 
-                {/* Decorative element */}
                 <div className="mt-6 h-1 w-0 group-hover:w-12 bg-linear-to-r from-primary to-transparent rounded-full transition-all duration-500" />
               </div>
             </div>

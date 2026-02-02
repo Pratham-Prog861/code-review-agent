@@ -1,11 +1,12 @@
 "use client";
 
-import { Github, Twitter, Heart } from "lucide-react";
+import { Github, Heart } from "lucide-react";
+import Link from "next/link";
 
 export function Footer() {
   return (
     <footer className="bg-card/50 backdrop-blur-sm border-t relative overflow-hidden">
-      {/* Background decoration */}
+
       <div className="absolute inset-0 bg-linear-to-b from-transparent via-primary/2 to-transparent" />
       <div className="absolute inset-0 bg-noise opacity-[0.015] dark:opacity-[0.025]" />
 
@@ -42,7 +43,7 @@ export function Footer() {
             <div className="flex items-center gap-2 text-xs text-muted-foreground/70">
               <span>Made with</span>
               <Heart className="w-3 h-3 text-rose-500 fill-rose-500 animate-pulse" />
-              <span>by the ScaleDown team</span>
+              <span>by the Pratham</span>
             </div>
           </div>
 
@@ -94,18 +95,12 @@ export function Footer() {
             All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <a href="#" className="group relative">
+            <Link href="https://github.com/Pratham-Prog861/code-review-agent" className="group relative" target="_blank" rel="noopener noreferrer">
               <div className="absolute -inset-2 bg-linear-to-r from-primary/20 to-indigo-500/20 rounded-lg opacity-0 group-hover:opacity-100 blur transition-all duration-300" />
               <div className="relative text-muted-foreground hover:text-foreground transition-colors duration-200 p-2 rounded-lg bg-muted/30 hover:bg-muted/50">
                 <Github className="w-4 h-4" />
               </div>
-            </a>
-            <a href="#" className="group relative">
-              <div className="absolute -inset-2 bg-linear-to-r from-primary/20 to-indigo-500/20 rounded-lg opacity-0 group-hover:opacity-100 blur transition-all duration-300" />
-              <div className="relative text-muted-foreground hover:text-foreground transition-colors duration-200 p-2 rounded-lg bg-muted/30 hover:bg-muted/50">
-                <Twitter className="w-4 h-4" />
-              </div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

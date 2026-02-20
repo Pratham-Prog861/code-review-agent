@@ -73,21 +73,21 @@ Analyze the following code:
             JSON.stringify(result, null, 2),
           );
 
+          const nested = result.results || result;
           const compressed =
-            result.compressed_prompt ||
+            nested.compressed_prompt ||
             (result as unknown as Record<string, unknown>).compressed_context ||
-            (result as unknown as Record<string, unknown>).output ||
-            (result as unknown as Record<string, unknown>).result;
+            (result as unknown as Record<string, unknown>).output;
 
           if (compressed && typeof compressed === "string") {
             compressedContext = compressed;
             originalTokens =
-              result.original_prompt_tokens ||
-              result.prompt_tokens ||
+              result.total_original_tokens ||
+              nested.original_prompt_tokens ||
               originalTokens;
             compressedTokens =
-              result.compressed_prompt_tokens ||
-              result.completion_tokens ||
+              result.total_compressed_tokens ||
+              nested.compressed_prompt_tokens ||
               Math.ceil(compressed.length / 4);
             console.log("✓ ScaleDown compression successful");
           } else {
